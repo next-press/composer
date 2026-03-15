@@ -1,0 +1,28 @@
+{
+    "name": "auroro/composer",
+    "description": "Composer script resolution utilities",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Auroro\\Composer\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Auroro\\Composer\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "extra": {
+        "branch-alias": {
+            "dev-main": "0.1.x-dev"
+        },
+        "split": {
+            "target": "next-press/composer"
+        }
+    }
+}
