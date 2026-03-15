@@ -101,6 +101,12 @@ it('guards against infinite recursion', function () {
     expect($resolver->resolve('@a'))->toBe('');
 });
 
+it('passes through unresolved @ references', function () {
+    $resolver = new ScriptResolver();
+
+    expect($resolver->resolve('@unknown'))->toBe('@unknown');
+});
+
 it('prefers bin entry over script reference', function () {
     $resolver = new ScriptResolver(
         scripts: ['lens' => 'echo script'],

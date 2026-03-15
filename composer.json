@@ -6,6 +6,10 @@
     "require": {
         "php": ">=8.3"
     },
+    "require-dev": {
+        "pestphp/pest": "^4",
+        "phpstan/phpstan": "^2"
+    },
     "autoload": {
         "psr-4": {
             "Auroro\\Composer\\": "src/"
@@ -16,7 +20,17 @@
             "Auroro\\Composer\\Tests\\": "tests/"
         }
     },
+    "scripts": {
+        "test": "pest",
+        "test:coverage": "pest --coverage",
+        "analyse": "phpstan analyse"
+    },
     "minimum-stability": "stable",
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
     "extra": {
         "branch-alias": {
             "dev-main": "0.1.x-dev"
