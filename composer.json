@@ -7,7 +7,9 @@
         "php": ">=8.3"
     },
     "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3",
         "pestphp/pest": "^4",
+        "pestphp/pest-plugin-type-coverage": "^4",
         "phpstan/phpstan": "^2"
     },
     "autoload": {
@@ -22,8 +24,11 @@
     },
     "scripts": {
         "test": "pest",
-        "test:coverage": "pest --coverage",
-        "analyse": "phpstan analyse"
+        "test:coverage": "XDEBUG_MODE=coverage pest --coverage --min=100",
+        "test:types": "pest --type-coverage --min=100",
+        "analyse": "phpstan analyse",
+        "cs": "php-cs-fixer fix --dry-run --diff",
+        "cs:fix": "php-cs-fixer fix"
     },
     "minimum-stability": "stable",
     "config": {
